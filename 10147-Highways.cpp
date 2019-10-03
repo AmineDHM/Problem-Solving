@@ -14,7 +14,6 @@ int dx[] = { -1, 1, 0, 0, -1, 1, -1, 1 };
 int dy[] = { 0, 0, -1, 1, -1, 1, 1, -1 };
 const int oo = 2e9;
 const int N = 1e6;
-const double eps = 1e-9;
 
 struct edge {
     int f, t;
@@ -25,7 +24,6 @@ struct edge {
 bool cmp(edge a, edge b) {
     return a.w < b.w;
 }
-
 
 int n, m, x, y;
 vector<vector<pair<int,double>>> g;
@@ -54,7 +52,6 @@ bool union_set(int u, int v) {
 double dist(int xa, int ya, int xb, int yb) {
     return sqrt(pow(xb - xa, 2) + pow(yb - ya, 2));
 }
-
 
 int main() {
     io;
