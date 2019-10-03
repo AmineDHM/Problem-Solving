@@ -31,13 +31,11 @@ int n, m, x, y;
 vector<vector<pair<int,double>>> g;
 PI p[1000];
 
-int parent[N], rang[N];
+int parent[N];
 
 void UnionFind(int n) {
-    for(int i = 1; i <= n; i++) {
+    for(int i = 1; i <= n; i++)
         parent[i] = i;
-        rang[i] = 1;
-    }
 }
 
 int find_set(int u) {
@@ -48,11 +46,8 @@ int find_set(int u) {
 bool union_set(int u, int v) {
     u = find_set(u);
     v = find_set(v);
-    if(rang[u] > rang[v]) swap(u, v);
-    if(u != v) {
-        rang[v] += rang[x];
+    if(u != v) 
         parent[u] = v;
-    }
     return u != v;
 }
 
@@ -95,9 +90,8 @@ int main() {
         sort(ALL(v), cmp);
         vector<edge> ans;
         for(edge e : v) {
-            if(union_set(e.f, e.t)) {
+            if(union_set(e.f, e.t)) 
                 ans.PB(e);
-            }
         }
         for(int i = 0; i < SZ(ans); i++)
                 cout << ans[i].f << " " << ans[i].t << (i == SZ(ans) ? "" : "\n");
