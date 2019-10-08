@@ -23,7 +23,7 @@ bool cmp(edge a, edge b) {
     return a.w < b.w;
 }
 
-int p[105];
+int p[111];
 int t, n, m, x, y, w;
 
 void unionfind() {
