@@ -24,7 +24,7 @@ int solve(int curr, int last) {
     for(int i = last; i <= curr; i++)
         sum += a[i];
     ret = solve(curr + 1, curr + 1) + sum * p[curr];
-    if(curr < n - 1)
+    if(curr < n - 1) //only when i can go forward
         ret = min(ret, solve(curr + 1, last));
     return ret;
 }
